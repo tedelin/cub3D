@@ -6,11 +6,12 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 16:08:59 by mcatal-d          #+#    #+#             */
-/*   Updated: 2023/05/31 11:56:39 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/05/31 13:16:03 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+#include "mlx_int.h"
 
 int	verif_rgb(t_map *map)
 {
@@ -69,7 +70,7 @@ int	mlx_start(t_map *map)
 	data.floor = convert_rgb(map->floor_tab);
 	ft_draw(&data);
 	mlx_put_image_to_window(data.mlx, data.win, data.render.img, 0, 0);
-	mlx_key_hook(data.win, key_hook, &data);
+	mlx_hook(data.win, KeyPress, KeyPressMask, &key_hook, &data);
 	mlx_hook(data.win, 17, 1L << 17, mlx_loop_end, data.mlx);
 	mlx_loop(data.mlx);
 	return (free_mlx(&data), 0);

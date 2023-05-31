@@ -6,16 +6,16 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 03:26:14 by tedelin           #+#    #+#             */
-/*   Updated: 2023/05/31 11:56:39 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/05/31 13:14:50 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 #include "mlx.h"
 
-t_img	ft_texture(t_data *data)
+t_tex	ft_texture(t_data *data)
 {
-	t_img	cur_img;
+	t_tex	cur_img;
 	double	step;
 	double	tex_pos;
 
@@ -37,7 +37,7 @@ t_img	ft_texture(t_data *data)
 
 void	img_draw(int x, int start, int end, t_data *data)
 {
-	t_img	cur_img;
+	t_tex	cur_img;
 	double	step;
 	double	tex_pos;
 	int		tex_y;

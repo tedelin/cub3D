@@ -6,7 +6,7 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:41:34 by mcatal-d          #+#    #+#             */
-/*   Updated: 2023/05/31 11:56:39 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/05/31 13:18:17 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 # define RGB "Error\nWrong arguments (need numbers rgb between 0 and 255)\n"
 # define IMG "Error\nImage couldn't be loaded\n"
 
-# define SCREENWIDTH 640
-# define SCREENHEIGHT 480
-# define MSPEED 1.0
+# define SCREENWIDTH 1200
+# define SCREENHEIGHT 700
+# define MSPEED 0.3
 # define RSPEED 0.2
 
 # include "libft.h"
@@ -52,7 +52,7 @@ typedef struct s_map
 
 }					t_map;
 
-typedef struct s_img
+typedef struct s_tex
 {
 	void			*img;
 	int				height;
@@ -61,15 +61,15 @@ typedef struct s_img
 	int				bpp;
 	int				size_line;
 	int				endian;
-}					t_img;
+}					t_tex;
 
 typedef struct s_data
 {
-	struct s_img	n_wall;
-	struct s_img	s_wall;
-	struct s_img	e_wall;
-	struct s_img	w_wall;
-	struct s_img	render;
+	struct s_tex	n_wall;
+	struct s_tex	s_wall;
+	struct s_tex	e_wall;
+	struct s_tex	w_wall;
+	struct s_tex	render;
 	struct s_map	*map;
 
 	int				floor;
@@ -162,7 +162,7 @@ int					mlx_start(t_map *map);
 /////////////////// Raycasting ///////////////////
 
 // Raycasting.c
-t_img				ft_texture(t_data *data);
+t_tex				ft_texture(t_data *data);
 void				img_draw(int x, int start, int end, t_data *data);
 void				ft_before_dda(t_data *data);
 void				ft_dda(t_data *data);
