@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mcatal-d <mcatal-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 14:23:16 by tedelin           #+#    #+#             */
-/*   Updated: 2023/05/31 12:00:28 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/05/31 13:40:39 by mcatal-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,31 +50,31 @@ void	ft_set(t_data *data, double dir_x, double dir_y, double plane_x)
 	data->pos_y += 0.5;
 }
 
-int    get_pos_player(t_map *map, t_data *data)
+int	get_pos_player(t_map *map, t_data *data)
 {
-    int    i;
-    int    j;
+	int	i;
+	int	j;
 
-    i = -1;
-    data->map = map;
-    while (map->map[++i])
-    {
-        j = -1;
-        while (++j < ft_strlen(map->map[i]))
-        {
-            data->pos_x = i;
-            data->pos_y = j;
-            if (map->map_int[i][j] == 3)
-                return (data->plane_y = 0, ft_set(data, 0, 1, 0.66), 0);
-            else if (map->map_int[i][j] == 4)
-                return (data->plane_y = 0, ft_set(data, 0, -1, -0.66), 0);
-            else if (map->map_int[i][j] == 5)
-                return (data->plane_y = -0.66, ft_set(data, 1, 0, 0), 0);
-            else if (map->map_int[i][j] == 6)
-                return (data->plane_y = 0.66, ft_set(data, -1, 0, 0), 0);
-        }
-    }
-    return (0);
+	i = -1;
+	data->map = map;
+	while (map->map[++i])
+	{
+		j = -1;
+		while (++j < ft_strlen(map->map[i]))
+		{
+			data->pos_x = i;
+			data->pos_y = j;
+			if (map->map_int[i][j] == 3)
+				return (data->plane_y = 0, ft_set(data, 0, 1, 0.66), 0);
+			else if (map->map_int[i][j] == 4)
+				return (data->plane_y = 0, ft_set(data, 0, -1, -0.66), 0);
+			else if (map->map_int[i][j] == 5)
+				return (data->plane_y = -0.66, ft_set(data, 1, 0, 0), 0);
+			else if (map->map_int[i][j] == 6)
+				return (data->plane_y = 0.66, ft_set(data, -1, 0, 0), 0);
+		}
+	}
+	return (0);
 }
 
 void	make_tab(char **tab_c, int **tab, int i, int j)
