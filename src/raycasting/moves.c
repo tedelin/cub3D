@@ -6,7 +6,7 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 12:42:43 by tedelin           #+#    #+#             */
-/*   Updated: 2023/06/01 18:06:39 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/01 22:29:36 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,21 +89,4 @@ void	ft_left(t_data *data, int key)
 			* sin(RSPEED);
 		data->plane_y = oldplane_x * sin(RSPEED) + data->plane_y * cos(RSPEED);
 	}
-}
-
-int	key_hook(int key, t_data *data)
-{
-	forward_backward(data, key);
-	ft_left(data, key);
-	ft_right(data, key);
-	left_right(data, key);
-	if (key == XK_w || key == XK_a || key == XK_s || key == XK_d
-		|| key == XK_Left || key == XK_Right)
-	{
-		ft_draw(data);
-		mlx_put_image_to_window(data->mlx, data->win, data->render.img, 0, 0);
-	}
-	if (key == XK_Escape)
-		mlx_loop_end(data->mlx);
-	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:41:34 by mcatal-d          #+#    #+#             */
-/*   Updated: 2023/06/01 18:15:29 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/01 22:33:01 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 
 # define SCREENWIDTH 960
 # define SCREENHEIGHT 640
-# define MSPEED 0.4
-# define RSPEED 0.2
+# define MSPEED 0.04
+# define RSPEED 0.03
 
 # include "libft.h"
 # include "mlx.h"
@@ -76,6 +76,13 @@ typedef struct s_data
 
 	int				floor;
 	int				ceiling;
+
+	int				forward;
+	int				backward;
+	int				left;
+	int				right;
+	int				r_cam;
+	int				l_cam;
 
 	double			wallx;
 	int				tex_x;
@@ -175,7 +182,9 @@ void				forward_backward(t_data *data, int key);
 void				left_right(t_data *data, int key);
 void				ft_right(t_data *data, int key);
 void				ft_left(t_data *data, int key);
-int					key_hook(int key, t_data *data);
+int					key_press(int key, t_data *data);
+int					key_release(int key, t_data *data);
+int					ft_move(t_data *data);
 
 // Utils.c
 int					init_textures(t_data *data);

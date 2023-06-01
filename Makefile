@@ -6,7 +6,7 @@
 #    By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/25 16:28:04 by mcatal-d          #+#    #+#              #
-#    Updated: 2023/06/01 18:41:23 by tedelin          ###   ########.fr        #
+#    Updated: 2023/06/01 22:32:23 by tedelin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ HEADERS = include/cub3d.h mlx/mlx.h mlx/mlx_int.h libft/libft.h
 SRCS		= 	$(addprefix src/, main.c \
 				$(addprefix parsing/, file_to_char.c set_struct_map.c free.c \
 				verif_good_map.c check_player.c utils_parsing.c verif_rgb.c) \
-				$(addprefix raycasting/, raycasting.c moves.c utils.c))
+				$(addprefix raycasting/, raycasting.c moves.c utils.c keys.c))
 OBJS		= $(patsubst src/%.c, obj/%.o, $(SRCS))
 RM			= rm -rf
 LIBFT = -Llibft -lft
