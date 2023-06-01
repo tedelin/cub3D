@@ -6,7 +6,7 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:41:34 by mcatal-d          #+#    #+#             */
-/*   Updated: 2023/05/31 13:18:17 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/01 18:15:29 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,16 @@
 # define ARG_F "Error\nWrong number of arguments for the floor color\n"
 # define RGB "Error\nWrong arguments (need numbers rgb between 0 and 255)\n"
 # define IMG "Error\nImage couldn't be loaded\n"
+# define MLX_FAIL "Error\nMlx failed to init\n"
 
-# define SCREENWIDTH 1200
-# define SCREENHEIGHT 700
-# define MSPEED 0.3
+# define SCREENWIDTH 960
+# define SCREENHEIGHT 640
+# define MSPEED 0.4
 # define RSPEED 0.2
 
 # include "libft.h"
 # include "mlx.h"
+# include "mlx_int.h"
 # include <X11/keysym.h>
 # include <fcntl.h>
 # include <math.h>

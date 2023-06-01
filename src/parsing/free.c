@@ -6,7 +6,7 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 07:17:58 by mcatal-d          #+#    #+#             */
-/*   Updated: 2023/05/31 12:01:18 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/01 18:17:45 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,13 @@ void	free_mlx(t_data *data)
 		mlx_destroy_image(data->mlx, data->w_wall.img);
 	if (data->render.img)
 		mlx_destroy_image(data->mlx, data->render.img);
-	mlx_clear_window(data->mlx, data->win);
-	mlx_destroy_window(data->mlx, data->win);
-	mlx_destroy_display(data->mlx);
+	if (data->win)
+	{
+		mlx_clear_window(data->mlx, data->win);
+		mlx_destroy_window(data->mlx, data->win);
+	}
+	if (data->mlx)
+		mlx_destroy_display(data->mlx);
 	free(data->mlx);
 	free_map(data->map);
 }

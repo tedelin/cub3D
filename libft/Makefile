@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mcatal-d <mcatal-d@student.42.fr>          +#+  +:+       +#+         #
+#    By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/11/09 17:21:15 by tedelin           #+#    #+#              #
-#    Updated: 2023/05/25 10:36:46 by mcatal-d         ###   ########.fr        #
+#    Updated: 2023/06/01 18:36:53 by tedelin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ OBJS_PRINTF = $(addprefix obj/, $(SRCS_PRINTF:.c=.o))
 SRCS_GNL = get_next_line.c get_next_line_utils.c
 OBJS_GNL = $(addprefix obj/, $(SRCS_GNL:.c=.o))
 INCLUDE = -I.
+HEADER = libft.h
 
 all: $(NAME) bonus gnl printf
 
@@ -42,9 +43,9 @@ gnl: $(OBJS_GNL)
 printf: $(OBJS_PRINTF)
 	@ar -rsc $(NAME) $(OBJS_PRINTF)
 
-obj/%.o: %.c
+obj/%.o: %.c $(HEADER)
 	@mkdir -p $(dir $@)
-	$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $^
+	$(CC) $(CFLAGS) $(INCLUDE) -c -o $@ $<
 
 clean:
 	@rm -f $(OBJS) $(OBJS_BONUS) $(OBJS_GNL) $(OBJS_PRINTF)

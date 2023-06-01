@@ -6,18 +6,15 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 03:26:14 by tedelin           #+#    #+#             */
-/*   Updated: 2023/05/31 13:14:50 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/01 18:11:45 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-#include "mlx.h"
 
 t_tex	ft_texture(t_data *data)
 {
 	t_tex	cur_img;
-	double	step;
-	double	tex_pos;
 
 	if (data->side == 0 && data->raydir_x < 0)
 		cur_img = data->w_wall;

@@ -6,12 +6,11 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 16:08:59 by mcatal-d          #+#    #+#             */
-/*   Updated: 2023/05/31 13:16:03 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/01 18:18:58 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-#include "mlx_int.h"
 
 int	verif_rgb(t_map *map)
 {
@@ -60,10 +59,14 @@ int	mlx_start(t_map *map)
 	t_data	data;
 
 	ft_memset(&data, 0, sizeof(t_data));
-	data.mlx = mlx_init();
-	data.win = mlx_new_window(data.mlx, SCREENWIDTH, SCREENHEIGHT, "Cub3D");
-	map->map_int = tab_char_to_tab_int(map->map);
 	data.map = map;
+	map->map_int = tab_char_to_tab_int(map->map);
+	data.mlx = mlx_init();
+	if (!data.mlx)
+		return (free_mlx(&data), printf(MLX_FAIL), exit(1), 1);
+	data.win = mlx_new_window(data.mlx, SCREENWIDTH, SCREENHEIGHT, "Cub3D");
+	if (!data.win)
+		return (free_mlx(&data), printf(MLX_FAIL), exit(1), 1);
 	init_textures(&data);
 	get_pos_player(map, &data);
 	data.ceiling = convert_rgb(map->celestial_tab);

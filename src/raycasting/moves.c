@@ -6,7 +6,7 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 12:42:43 by tedelin           #+#    #+#             */
-/*   Updated: 2023/05/31 13:21:29 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/01 18:06:39 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,6 @@ int	key_hook(int key, t_data *data)
 		|| key == XK_Left || key == XK_Right)
 	{
 		ft_draw(data);
-		mlx_clear_window(data->mlx, data->win);
 		mlx_put_image_to_window(data->mlx, data->win, data->render.img, 0, 0);
 	}
 	if (key == XK_Escape)
