@@ -1,9 +1,9 @@
-NO ./textures/colorstone.xpm
-SO ./textures/wood.xpm
-WE ./textures/greystone.xpm
-EA ./textures/redbrick.xpm
-F 220,100,0
-C 225,30,0
+NO ./textures/diamond.xpm
+SO ./textures/gold.xpm
+WE ./textures/iron.xpm
+EA ./textures/redstone.xpm
+F 128,128,128
+C 32,32,32
 
 
         1111111111111111111111111

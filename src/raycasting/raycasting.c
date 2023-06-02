@@ -6,7 +6,7 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/27 03:26:14 by tedelin           #+#    #+#             */
-/*   Updated: 2023/06/01 18:11:45 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/02 11:29:42 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ t_tex	ft_texture(t_data *data)
 	t_tex	cur_img;
 
 	if (data->side == 0 && data->raydir_x < 0)
-		cur_img = data->w_wall;
-	else if (data->side == 0 && data->raydir_x > 0)
-		cur_img = data->e_wall;
-	else if (data->side == 1 && data->raydir_y < 0)
-		cur_img = data->s_wall;
-	else
 		cur_img = data->n_wall;
+	else if (data->side == 0 && data->raydir_x > 0)
+		cur_img = data->s_wall;
+	else if (data->side == 1 && data->raydir_y < 0)
+		cur_img = data->w_wall;
+	else
+		cur_img = data->e_wall;
 	data->tex_x = (int)(data->wallx * (double)(cur_img.width));
 	if (data->side == 0 && data->raydir_x > 0)
 		data->tex_x = cur_img.width - data->tex_x - 1;

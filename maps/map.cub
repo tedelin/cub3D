@@ -1,19 +1,19 @@
-C                       0,125,255
+F                       128,128,128
 
-WE                   ./textures/eagle.xpm
+WE                   ./textures/redstone.xpm
 
-EA ./textures/greystone.xpm
-
-
-SO ./textures/wood.xpm
-
-F  0,143,85
+EA ./textures/diamond.xpm
 
 
-NO ./textures/purplestone.xpm
+SO ./textures/iron.xpm
+
+C  32,32,32
+
+
+NO ./textures/gold.xpm
 
 1111111111111111111111111111111111
-10000000000000000000E0000000000001
+10000000000000000000W0000000000001
 1110111111111111111111111111111111
 1000000000000001110000000000000001
 1000000000000000000000000000000001

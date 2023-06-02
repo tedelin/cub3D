@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcatal-d <mcatal-d@student.42.fr>          +#+  +:+       +#+        */
+/*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 14:23:16 by tedelin           #+#    #+#             */
-/*   Updated: 2023/05/31 13:40:39 by mcatal-d         ###   ########.fr       */
+/*   Updated: 2023/06/02 11:26:43 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,13 @@ int	get_pos_player(t_map *map, t_data *data)
 		{
 			data->pos_x = i;
 			data->pos_y = j;
-			if (map->map_int[i][j] == 3)
+			if (map->map_int[i][j] == 5)
 				return (data->plane_y = 0, ft_set(data, 0, 1, 0.66), 0);
-			else if (map->map_int[i][j] == 4)
-				return (data->plane_y = 0, ft_set(data, 0, -1, -0.66), 0);
-			else if (map->map_int[i][j] == 5)
-				return (data->plane_y = -0.66, ft_set(data, 1, 0, 0), 0);
 			else if (map->map_int[i][j] == 6)
+				return (data->plane_y = 0, ft_set(data, 0, -1, -0.66), 0);
+			else if (map->map_int[i][j] == 4)
+				return (data->plane_y = -0.66, ft_set(data, 1, 0, 0), 0);
+			else if (map->map_int[i][j] == 3)
 				return (data->plane_y = 0.66, ft_set(data, -1, 0, 0), 0);
 		}
 	}
