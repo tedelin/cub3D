@@ -6,7 +6,7 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 22:28:45 by tedelin           #+#    #+#             */
-/*   Updated: 2023/06/01 22:32:46 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/02 11:41:09 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	key_press(int key, t_data *data)
 		data->l_cam = 1;
 	if (key == XK_Right)
 		data->r_cam = 1;
+	if (key == XK_Shift_L)
+		data->sp = 0.1;
 	if (key == XK_Escape)
 		mlx_loop_end(data->mlx);
 	return (0);
@@ -45,6 +47,8 @@ int	key_release(int key, t_data *data)
 		data->l_cam = 0;
 	if (key == XK_Right)
 		data->r_cam = 0;
+	if (key == XK_Shift_L)
+		data->sp = 0.04;
 	return (0);
 }
 

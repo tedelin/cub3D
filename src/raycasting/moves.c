@@ -6,7 +6,7 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/30 12:42:43 by tedelin           #+#    #+#             */
-/*   Updated: 2023/06/01 22:29:36 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/02 11:39:53 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,20 @@ void	forward_backward(t_data *data, int key)
 	if (key == XK_w)
 	{
 		if (data->map->map_int[(int)(data->pos_x + data->dir_x
-				* MSPEED)][(int)(data->pos_y)] == 0)
-			data->pos_x += data->dir_x * MSPEED;
+				* data->sp)][(int)(data->pos_y)] == 0)
+			data->pos_x += data->dir_x * data->sp;
 		if (data->map->map_int[(int)(data->pos_x)][(int)(data->pos_y
-				+ data->dir_y * MSPEED)] == 0)
-			data->pos_y += data->dir_y * MSPEED;
+				+ data->dir_y * data->sp)] == 0)
+			data->pos_y += data->dir_y * data->sp;
 	}
 	if (key == XK_s)
 	{
 		if (data->map->map_int[(int)(data->pos_x - data->dir_x
-				* MSPEED)][(int)(data->pos_y)] == 0)
-			data->pos_x -= data->dir_x * MSPEED;
+				* data->sp)][(int)(data->pos_y)] == 0)
+			data->pos_x -= data->dir_x * data->sp;
 		if (data->map->map_int[(int)(data->pos_x)][(int)(data->pos_y
-				- data->dir_y * MSPEED)] == 0)
-			data->pos_y -= data->dir_y * MSPEED;
+				- data->dir_y * data->sp)] == 0)
+			data->pos_y -= data->dir_y * data->sp;
 	}
 }
 
@@ -39,20 +39,20 @@ void	left_right(t_data *data, int key)
 	if (key == XK_a)
 	{
 		if (data->map->map_int[(int)(data->pos_x - data->plane_x
-				* MSPEED)][(int)(data->pos_y)] == 0)
-			data->pos_x -= data->plane_x * MSPEED;
+				* data->sp)][(int)(data->pos_y)] == 0)
+			data->pos_x -= data->plane_x * data->sp;
 		if (data->map->map_int[(int)(data->pos_x)][(int)(data->pos_y
-				- data->plane_y * MSPEED)] == 0)
-			data->pos_y -= data->plane_y * MSPEED;
+				- data->plane_y * data->sp)] == 0)
+			data->pos_y -= data->plane_y * data->sp;
 	}
 	if (key == XK_d)
 	{
 		if (data->map->map_int[(int)(data->pos_x + data->plane_x
-				* MSPEED)][(int)(data->pos_y)] == 0)
-			data->pos_x += data->plane_x * MSPEED;
+				* data->sp)][(int)(data->pos_y)] == 0)
+			data->pos_x += data->plane_x * data->sp;
 		if (data->map->map_int[(int)(data->pos_x)][(int)(data->pos_y
-				+ data->plane_y * MSPEED)] == 0)
-			data->pos_y += data->plane_y * MSPEED;
+				+ data->plane_y * data->sp)] == 0)
+			data->pos_y += data->plane_y * data->sp;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 16:08:59 by mcatal-d          #+#    #+#             */
-/*   Updated: 2023/06/01 22:11:49 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/02 11:40:00 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ int	mlx_start(t_map *map)
 	get_pos_player(map, &data);
 	data.ceiling = convert_rgb(map->celestial_tab);
 	data.floor = convert_rgb(map->floor_tab);
+	data.sp = 0.04;
 	ft_draw(&data);
 	mlx_put_image_to_window(data.mlx, data.win, data.render.img, 0, 0);
 	mlx_hook(data.win, KeyPress, KeyPressMask, &key_press, &data);

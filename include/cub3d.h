@@ -6,7 +6,7 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:41:34 by mcatal-d          #+#    #+#             */
-/*   Updated: 2023/06/01 22:33:01 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/02 11:42:53 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 
 # define SCREENWIDTH 960
 # define SCREENHEIGHT 640
-# define MSPEED 0.04
 # define RSPEED 0.03
 
 # include "libft.h"
@@ -83,6 +82,7 @@ typedef struct s_data
 	int				right;
 	int				r_cam;
 	int				l_cam;
+	double			sp;
 
 	double			wallx;
 	int				tex_x;
