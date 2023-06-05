@@ -6,7 +6,7 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/25 16:41:34 by mcatal-d          #+#    #+#             */
-/*   Updated: 2023/06/02 11:42:53 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/05 15:34:07 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 
 # include "libft.h"
 # include "mlx.h"
-# include "mlx_int.h"
+# include <X11/Xlib.h>
 # include <X11/keysym.h>
 # include <fcntl.h>
 # include <math.h>
