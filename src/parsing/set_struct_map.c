@@ -6,7 +6,7 @@
 /*   By: mcatal-d <mcatal-d@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 05:12:20 by mcatal-d          #+#    #+#             */
-/*   Updated: 2023/05/26 21:03:42 by mcatal-d         ###   ########.fr       */
+/*   Updated: 2023/06/14 09:20:14 by mcatal-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,18 +57,26 @@ int	set_newsfc(t_map *map, char *line)
 	split = ft_split(line, ' ');
 	if (already_set(map, split) == -1)
 		return (printf("Error\nDouble declaration of texture\n"),
-			free_tab(split), free_map(map), -1);
-	if (split[0][0] == 'N' && !map->north && !split[2])
+				free_tab(split),
+				free_map(map),
+				-1);
+	if (!ft_strncmp(split[0], "NO", 2) && !map->north && !split[2]
+		&& ft_strlen(split[0]) == 2)
 		map->north = ft_strdup(split[1]);
-	else if (split[0][0] == 'E' && !map->east && !split[2])
+	else if (!ft_strncmp(split[0], "EA", 2) && !map->east && !split[2]
+		&& ft_strlen(split[0]) == 2)
 		map->east = ft_strdup(split[1]);
-	else if (split[0][0] == 'W' && !map->west && !split[2])
+	else if (!ft_strncmp(split[0], "WE", 2) && !map->west && !split[2]
+		&& ft_strlen(split[0]) == 2)
 		map->west = ft_strdup(split[1]);
-	else if (split[0][0] == 'S' && !map->south && !split[2])
+	else if (!ft_strncmp(split[0], "SO", 2) && !map->south && !split[2]
+		&& ft_strlen(split[0]) == 2)
 		map->south = ft_strdup(split[1]);
-	else if (split[0][0] == 'F' && !map->floor && !split[2])
+	else if (!ft_strncmp(split[0], "F", 1) && !map->floor && !split[2]
+		&& ft_strlen(split[0]) == 1)
 		map->floor = ft_strdup(split[1]);
-	else if (split[0][0] == 'C' && !map->celestial && !split[2])
+	else if (!ft_strncmp(split[0], "C", 1) && !map->celestial && !split[2]
+		&& ft_strlen(split[0]) == 1)
 		map->celestial = ft_strdup(split[1]);
 	return (free_tab(split), 0);
 }
