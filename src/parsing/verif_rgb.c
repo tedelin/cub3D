@@ -6,7 +6,7 @@
 /*   By: tedelin <tedelin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 16:08:59 by mcatal-d          #+#    #+#             */
-/*   Updated: 2023/06/02 11:40:00 by tedelin          ###   ########.fr       */
+/*   Updated: 2023/06/15 15:21:00 by tedelin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,10 @@ int	mlx_start(t_map *map)
 	data.mlx = mlx_init();
 	if (!data.mlx)
 		return (free_mlx(&data), printf(MLX_FAIL), exit(1), 1);
+	init_textures(&data);
 	data.win = mlx_new_window(data.mlx, SCREENWIDTH, SCREENHEIGHT, "Cub3D");
 	if (!data.win)
 		return (free_mlx(&data), printf(MLX_FAIL), exit(1), 1);
-	init_textures(&data);
 	get_pos_player(map, &data);
 	data.ceiling = convert_rgb(map->celestial_tab);
 	data.floor = convert_rgb(map->floor_tab);
